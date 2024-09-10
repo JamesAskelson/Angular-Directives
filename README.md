@@ -25,3 +25,17 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Angular Directives
+
+Angular directions are classes that added certain behaviors to your app's elements
+
+# Component  Directives
+Directives that are essentially a custom element with its own view and behavior. Every angular component is a directive with a template.
+# Structural Directives
+Directives that alter the layout of the dom by adding or removing an element (nglf, ngFor, ngSwitch) [for newer angular vers, we use @If, @For, and @Switch]
+@If - Render element based on a Boolean Value
+@For - repeats an element for each item in a collection
+@Switch display one of a set of elements based on a matching criteria
+# Attribute Directives
+Directives that change the appearance/behavior of an element/component/directive. (ngClass, ngStyle)
