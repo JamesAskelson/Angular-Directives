@@ -1,3 +1,6 @@
+<!-- Angular directives allow developers to add, modify, and selectively remove content on the dom -->
+
+
 <!-- Old way -->
 
 <h2 *ngIf="isLoggedIn; else message">{{userName}} (ngif)</h2>
@@ -8,6 +11,7 @@
 <ng-template #message>
   <h2>You are not logged in (ng-template #message)</h2>
 </ng-template>
+
 <!-- new way -->
 
 @if (isLoggedIn == true){
@@ -15,4 +19,40 @@
 }
 @else {
   <h3>You are not logged in (else block)</h3>
+}
+
+<!-- Multiple condictions -->
+
+<h2>Below is showcases of multiple conditionals</h2>
+
+
+@if (isAdmin ){
+  <h3>Hello Admin</h3>
+  <ng-container [ngTemplateOutlet]="dynamicTemplate"></ng-container>
+}
+@else if (isModerator) {
+  <h4>Hello Moderator</h4>
+}
+@else if (isGuest) {
+  <p>Hello Guest</p>
+}
+
+<ng-template #dynamicTemplate>
+  <p>Hello Admin</p>
+</ng-template>
+
+
+
+<button (click)="makeAdmin()">Click to be admin</button>
+<button (click)="makeModerator()">Click to be Moderator</button>
+<button (click)="makeGuest()">Click to be Guest</button>
+
+
+<br>
+
+@if(loginCount < 3){
+  <button (click)="loginAttempt()">Log In</button>
+}
+@else {
+  <p>You have failed logging in 3 times!!!</p>
 }
