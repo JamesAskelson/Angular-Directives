@@ -56,3 +56,21 @@
 @else {
   <p>You have failed logging in 3 times!!!</p>
 }
+
+<br>
+
+<h3>{{friends}}</h3>
+<h3>{{friends[0]}}</h3>
+<h3>{{friends[1]}}</h3>
+<h3>{{friends[2]}}</h3>
+<h3>{{friends[3]}}</h3>
+
+<h2>Below is a for loop with the users</h2>
+
+<h3 *ngFor="let friend of friends">{{friend}}</h3>
+
+<h2>Below is a for loop with syntax block</h2>
+
+@for(friend of friends; track friend){
+  <h3>{{friend}}</h3>
+}

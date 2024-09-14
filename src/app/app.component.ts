@@ -18,6 +18,7 @@ export class AppComponent {
   isAdmin: boolean = false;
   isModerator: boolean = false;
   loginCount: number = 0;
+  friends: Array<string> = ['tim', 'jon', 'anthony', 'sandra', 'tyrone'];
 
   makeAdmin(){
     this.isAdmin = true;
