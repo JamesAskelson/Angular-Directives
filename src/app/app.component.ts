@@ -20,6 +20,17 @@ export class AppComponent {
   loginCount: number = 0;
   friends: Array<string> = ['tim', 'jon', 'anthony', 'sandra', 'tyrone'];
 
+  friendsObj: Array<{ id: number, name: string, email: string }> = [
+    {id: 1, name: 'tim', email: 'tim@gmail.com'},
+    {id: 2, name: 'jon', email: 'jon@gmail.com'},
+    {id: 3, name: 'anthony', email: 'anthony@gmail.com'},
+    {id: 4, name: 'sandra', email: 'sandra@gmail.com'},
+  ]
+
+  trackById(index:number, friend: any): number {
+    return friend.id
+  }
+
   makeAdmin(){
     this.isAdmin = true;
     this.isModerator = false;
@@ -40,5 +51,14 @@ export class AppComponent {
 
   loginAttempt(){
     this.loginCount ++;
+  }
+
+  addNewUser(){
+    let user = { id:5, name:'james', email: 'james@gmail.com'}
+    this.friendsObj.push(user)
+  }
+
+  deleteFriend(id: number){
+    this.friendsObj.splice(id, 1)
   }
 }

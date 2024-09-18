@@ -74,3 +74,44 @@
 @for(friend of friends; track friend){
   <h3>{{friend}}</h3>
 }
+
+<br>
+
+<h2>Unordered Lists</h2>
+
+<ul>
+  @for(friend of friends; track friend){
+    <li>
+      {{friend}}
+    </li>
+  }
+</ul>
+
+<h2>Unordered List with array object</h2>
+
+<ul>
+  <li *ngFor="let friend of friendsObj; let i = index">
+    {{friend.name}}
+    {{friend.email}}
+    <button (click)="deleteFriend(i)">Delete</button>
+  </li>
+</ul>
+
+<ul>
+  @for(friend of friendsObj; track friend.id; let i = $index){
+    <li>
+      {{friend.id}}
+      {{friend.name}}
+      {{friend.email}}
+    </li>
+    <button (click)="deleteFriend(i)">Delete</button>
+  }
+</ul>
+
+<!-- Change Detection -->
+
+<br>
+
+<h3>Button to add users</h3>
+
+<button (click)="addNewUser()">Add Demo friend</button>
