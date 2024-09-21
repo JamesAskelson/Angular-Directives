@@ -26,14 +26,14 @@
 <h2>Below is showcases of multiple conditionals</h2>
 
 
-@if (isAdmin ){
+@if (userRole === 'Admin' ){
   <h3>Hello Admin</h3>
   <ng-container [ngTemplateOutlet]="dynamicTemplate"></ng-container>
 }
-@else if (isModerator) {
+@else if (userRole === 'Moderator' ) {
   <h4>Hello Moderator</h4>
 }
-@else if (isGuest) {
+@else if (userRole === 'Guest') {
   <p>Hello Guest</p>
 }
 
@@ -46,6 +46,7 @@
 <button (click)="makeAdmin()">Click to be admin</button>
 <button (click)="makeModerator()">Click to be Moderator</button>
 <button (click)="makeGuest()">Click to be Guest</button>
+<button (click)="logout()">Log Out</button>
 
 
 <br>
@@ -110,6 +111,9 @@
     </li>
     <button (click)="deleteFriend(i)">Delete</button>
   }
+  @empty {
+    <p>No Friends lmao - Using Empty</p>
+  }
 </ul>
 
 <!-- Change Detection -->
@@ -119,3 +123,18 @@
 <h3>Button to add users</h3>
 
 <button (click)="addNewUser()">Add Demo friend</button>
+
+<div [ngSwitch]="userRole">
+  <div *ngSwitchCase="'Admin'">
+    You are Admin
+  </div>
+  <div *ngSwitchCase="'Moderator'">
+    You are Moderator
+  </div>
+  <div *ngSwitchCase="'Guest'">
+    You are Guest
+  </div>
+  <div *ngSwitchDefault="''">
+    Please Log In
+  </div>
+</div>

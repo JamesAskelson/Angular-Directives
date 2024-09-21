@@ -14,9 +14,7 @@ export class AppComponent {
   title = 'Directives-Learning';
   isLoggedIn:boolean = true;
   userName: string = 'John Doe';
-  isGuest: boolean = true;
-  isAdmin: boolean = false;
-  isModerator: boolean = false;
+  userRole: string = '';
   loginCount: number = 0;
   friends: Array<string> = ['tim', 'jon', 'anthony', 'sandra', 'tyrone'];
 
@@ -32,21 +30,19 @@ export class AppComponent {
   }
 
   makeAdmin(){
-    this.isAdmin = true;
-    this.isModerator = false;
-    this.isGuest = false;
+    this.userRole = 'Admin'
   }
 
   makeModerator(){
-    this.isAdmin = false;
-    this.isModerator = true;
-    this.isGuest = false;
+    this.userRole = 'Moderator'
   }
 
   makeGuest(){
-    this.isAdmin = false;
-    this.isModerator = false;
-    this.isGuest = true;
+    this.userRole = 'Guest'
+  }
+
+  logout(){
+    this.userRole = ''
   }
 
   loginAttempt(){
