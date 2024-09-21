@@ -89,6 +89,10 @@
 
 <h2>Unordered List with array object</h2>
 
+@if(friendsObj.length < 1){
+  <p>No Friends lmao</p>
+}
+
 <ul>
   <li *ngFor="let friend of friendsObj; let i = index">
     {{friend.name}}
