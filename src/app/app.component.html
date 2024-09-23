@@ -138,3 +138,18 @@
     Please Log In
   </div>
 </div>
+
+@switch(userRole){
+  @case ('Admin') {
+    You are Admin - block syntax
+  }
+  @case ('Moderator') {
+    You are Moderator - block syntax
+  }
+  @case ('Guest') {
+    You are Guest - block syntax
+  }
+  @default {
+    Please Log in - block syntax
+  }
+}
